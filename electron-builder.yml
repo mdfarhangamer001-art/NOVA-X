@@ -1,0 +1,37 @@
+# NOVA-X Electron Builder Configuration
+appId: ai.novax.station
+productName: NOVA-X
+copyright: Copyright © 2026 NOVA-X AI Systems
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**/*
+  - electron/**/*
+  - public/**/*
+  - package.json
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: public/favicon.ico
+  legalTrademarks: NOVA-X Automated Cybernetic Systems
+  publisherName: NOVA-X LLC
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: NOVA-X Station
+  installerIcon: public/favicon.ico
+  uninstallerIcon: public/favicon.ico
+  runAfterFinish: true
+
+publish:
+  provider: generic
+  url: ${UPDATE_URL}

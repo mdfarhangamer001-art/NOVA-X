@@ -1,0 +1,6 @@
+{
+  "name": "NOVA-X Command Center",
+  "description": "The ultimate futuristic Windows AI assistant dashboard featuring system monitoring, automated script builder, live vision analyzer, coding workspace, and mobile bridge.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
