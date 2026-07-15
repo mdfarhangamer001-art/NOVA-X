@@ -71,7 +71,7 @@ export default function HolographicStartup({ onComplete }: HolographicStartupPro
       <div className="flex justify-between items-start relative z-10 border-b border-emerald-500/20 pb-4 text-[10px] text-emerald-600">
         <div>
           <p className="font-bold uppercase">SYSTEM: IRIS-AI BOOT PROTOCOLS v1.6.3</p>
-          <p>HOST: WIN-11_NATIVE_CORE</p>
+          <p>CREATOR: TEHZEEB (IG: <span className="text-emerald-400 font-bold">xtehzeeb.x</span>)</p>
         </div>
         <div className="text-right font-mono">
           <p>INTEGRITY: AES-256_VERIFIED</p>
