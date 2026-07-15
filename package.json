@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "start": "node server.ts"
+    "start": "node server.ts",
+    "electron:dev": "electron .",
+    "electron:build": "vite build && electron-builder"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
@@ -21,7 +23,8 @@
     "vite": "^6.2.3",
     "express": "^4.21.2",
     "dotenv": "^17.2.3",
-    "motion": "^12.23.24"
+    "motion": "^12.23.24",
+    "electron-updater": "^6.2.1"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
@@ -31,6 +34,8 @@
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.3",
-    "@types/express": "^4.17.21"
+    "@types/express": "^4.17.21",
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
   }
 }

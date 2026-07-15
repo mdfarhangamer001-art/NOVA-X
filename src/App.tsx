@@ -9,6 +9,7 @@ import MemoryVault from './components/MemoryVault';
 import AgentWorkspace from './components/AgentWorkspace';
 import DeviceBridge from './components/DeviceBridge';
 import SettingsPanel from './components/SettingsPanel';
+import APICenter from './components/APICenter';
 
 import {
   PRESET_WORKFLOWS,
@@ -40,7 +41,8 @@ import {
   Sliders,
   ChevronRight,
   ShieldAlert,
-  FolderOpen
+  FolderOpen,
+  Key
 } from 'lucide-react';
 
 export default function App() {
@@ -52,8 +54,8 @@ export default function App() {
   const [hasLocalData, setHasLocalData] = useState(false);
   const [authSessionState, setAuthSessionState] = useState<'unauthenticated' | 'google' | 'local' | 'guest'>('unauthenticated');
 
-  // Navigation: VoiceHUD, Automation, DevNexus, MemoryVault, DeviceBridge, AgentCouncil, Settings
-  const [activeTab, setActiveTab] = useState<'voice' | 'automation' | 'dev_nexus' | 'memory' | 'device' | 'council' | 'settings'>('voice');
+  // Navigation: VoiceHUD, Automation, DevNexus, MemoryVault, DeviceBridge, AgentCouncil, Settings, APICenter
+  const [activeTab, setActiveTab] = useState<'voice' | 'automation' | 'dev_nexus' | 'memory' | 'device' | 'council' | 'settings' | 'api_center'>('voice');
 
   // Global Audio Transceiver Connection parameters
   const [isConnected, setIsConnected] = useState(true);
@@ -301,6 +303,7 @@ export default function App() {
                 { id: 'memory' as const, label: 'Memory Vault', icon: Database, desc: 'SQLite vector coordinates' },
                 { id: 'device' as const, label: 'Device Bridge', icon: Smartphone, desc: 'USB ADB mirroring OCR' },
                 { id: 'council' as const, label: 'Council Grid', icon: Cpu, desc: '5-Agent collaborative reasoning' },
+                { id: 'api_center' as const, label: 'API Center', icon: Key, desc: 'Secure providers & sync' },
                 { id: 'settings' as const, label: 'Settings Panel', icon: Settings, desc: 'Updater manifests' }
               ].map((tab) => {
                 const Icon = tab.icon;
@@ -686,6 +689,10 @@ export default function App() {
 
           {activeTab === 'council' && (
             <AgentWorkspace onAddWorkflow={handleAddNewWorkflow} systemLogSetter={addSystemLog} />
+          )}
+
+          {activeTab === 'api_center' && (
+            <APICenter isLoggedIn={authSessionState === 'google'} systemLogSetter={addSystemLog} />
           )}
 
           {activeTab === 'settings' && (
