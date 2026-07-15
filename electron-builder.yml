@@ -8,10 +8,9 @@ directories:
 
 files:
   - dist/**/*
-  - electron/**/*
+  - dist-electron/**/*
   - package.json
   - index.html
-  - server.ts
 
 win:
   target:

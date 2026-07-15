@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "dist-electron/main.cjs",
+  "description": "NOVA-X: Core Command Desktop Station & Automated Updates Pipeline",
+  "author": "Tehzeeb (xtehzeeb.x)",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
@@ -10,8 +13,8 @@
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
     "start": "node server.ts",
-    "electron:dev": "electron .",
-    "electron:build": "vite build && electron-builder"
+    "electron:dev": "esbuild electron/main.ts --bundle --platform=node --external=electron --outfile=dist-electron/main.cjs && esbuild electron/preload.ts --bundle --platform=node --external=electron --outfile=dist-electron/preload.cjs && electron .",
+    "electron:build": "vite build && esbuild electron/main.ts --bundle --platform=node --external=electron --outfile=dist-electron/main.cjs && esbuild electron/preload.ts --bundle --platform=node --external=electron --outfile=dist-electron/preload.cjs && electron-builder"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
