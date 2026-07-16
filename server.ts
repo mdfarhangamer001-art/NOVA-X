@@ -38,7 +38,7 @@ app.post('/api/chat', async (req, res) => {
       model: 'gemini-2.5-flash',
       contents: messages,
       config: {
-        systemInstruction: `You are NOVA-X, the highly advanced, futuristic Windows AI Assistant. You possess deep knowledge of Windows 10/11 system internals, PyAutoGUI desktop automation, ADB Android control, VS Code scripting, and local Python pipelines. Respond with a technical, helpful, and sleek robotic/futuristic tone (sleek command-center operator vibe, yet extremely clear and accurate). You are running inside the NOVA-X Quantum Core. Keep responses relatively concise, using clean Markdown formatting. Suggest PowerShell, Python (pyautogui, psutil), or command line code blocks when helpful.`,
+        systemInstruction: `You are IRIS-AI, a highly advanced, futuristic voice-first Desktop AI Assistant created by Tehzeeb (Instagram: xtehzeeb.x, Email: mdfarhangamer001@gmail.com). You possess deep capabilities in Windows system internals, PyAutoGUI desktop automation, ADB Android control, VS Code scripting, and local Python pipelines. Respond with a technical, helpful, and sleek robotic/futuristic tone (sleek command-center operator vibe, yet extremely clear and accurate). You are running inside the IRIS-AI Quantum Core. Keep responses relatively concise, using clean Markdown formatting. Suggest PowerShell, Python (pyautogui, psutil), or command line code blocks when helpful.`,
       }
     });
     res.json({ text: response.text });
@@ -68,7 +68,7 @@ app.post('/api/analyze-screen', async (req, res) => {
         query || 'Analyze this screenshot and list any visible interactive UI elements with approximate pixel coordinates (X, Y in standard 1920x1080 resolution if possible) so a PyAutoGUI script can click them. Return a structured breakdown of what is on screen and suggested automation actions.'
       ],
       config: {
-        systemInstruction: 'You are the Vision Module of NOVA-X. You excel at OCR, screen coordinate tracking, and window layout understanding. Be precise and structured.'
+        systemInstruction: 'You are the Vision Module of IRIS-AI. You excel at OCR, screen coordinate tracking, and window layout understanding. Be precise and structured.'
       }
     });
     res.json({ text: response.text });
@@ -87,7 +87,7 @@ app.post('/api/generate-code', async (req, res) => {
     const ai = getAi();
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `Write a clean, functional Windows automation script in Python or PowerShell based on: "${prompt}". Use standard libraries like pyautogui, os, sys, psutil, subprocess, or adbutils if it mentions mobile. Make it modular and explain how it connects to the NOVA-X dashboard. Return your output as JSON: { "code": "...", "explanation": "..." }. Follow this JSON schema exactly without markdown wrapping in the JSON values.`,
+      contents: `Write a clean, functional Windows automation script in Python or PowerShell based on: "${prompt}". Use standard libraries like pyautogui, os, sys, psutil, subprocess, or adbutils if it mentions mobile. Make it modular and explain how it connects to the IRIS-AI dashboard. Return your output as JSON: { "code": "...", "explanation": "..." }. Follow this JSON schema exactly without markdown wrapping in the JSON values.`,
       config: {
         responseMimeType: 'application/json',
       }
@@ -108,7 +108,7 @@ app.post('/api/council', async (req, res) => {
     const ai = getAi();
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `You are the NOVA-X AI Council. Simulate a high-level real-time engineering debate about the following user prompt: "${prompt}".
+      contents: `You are the IRIS-AI Council. Simulate a high-level real-time engineering debate about the following user prompt: "${prompt}".
       Generate a professional, detailed multi-agent discussion between 5 specialized agents:
       1. Planner: Focuses on architecture, workflows, high-level steps, and prerequisites.
       2. Researcher: Explains platform APIs, system constraints, security privileges, and technical research.
@@ -147,5 +147,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`NOVA-X Production Server running on port ${port}`);
+  console.log(`IRIS-AI Production Server running on port ${port}`);
 });

@@ -52,14 +52,14 @@ export default function SettingsPanel({
   const handleCheckManualUpdates = () => {
     setCheckingUpdate(true);
     setUpdateMessage(null);
-    systemLogSetter("OS_SHELL: Querying github.com/mdfarhangamer001/react-example release manifests...");
+    systemLogSetter("OS_SHELL: Querying github.com/IRISX-AI/IRIS-AI release manifests...");
 
     setTimeout(() => {
       setCheckingUpdate(false);
       setLastChecked(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + " Today");
       setShowUpdatePrompt(true);
-      setUpdateMessage("NOVA-X v1.7.0 Core Update available on remote release index!");
-      systemLogSetter("OS_SHELL: Found update candidate NOVA-X v1.7.0. Prompting client operator.");
+      setUpdateMessage("IRIS-AI v1.7.0 Core Update available on remote release index!");
+      systemLogSetter("OS_SHELL: Found update candidate IRIS-AI v1.7.0. Prompting client operator.");
     }, 1500);
   };
 
@@ -67,7 +67,7 @@ export default function SettingsPanel({
     setShowUpdatePrompt(false);
     setUpdatePhase('downloading');
     setDownloadProgress(0);
-    systemLogSetter("UPDATER: Requesting release binary package: 'NOVA-X_v1.7.0_Setup.exe'...");
+    systemLogSetter("UPDATER: Requesting release binary package: 'IRIS-AI_v1.7.0_Setup.exe'...");
 
     // 1. Download Simulation
     const interval = setInterval(() => {
@@ -82,7 +82,7 @@ export default function SettingsPanel({
           setTimeout(() => {
             // 3. AppData backup simulation
             setUpdatePhase('backing_up');
-            systemLogSetter("UPDATER: Compressing active caches: Backing up SQLite and Key matrices to AppData/Local/NOVA-X/backups/...");
+            systemLogSetter("UPDATER: Compressing active caches: Backing up SQLite and Key matrices to AppData/Local/IRIS-AI/backups/...");
             
             setTimeout(() => {
               // 4. Installing Patch simulation
@@ -241,10 +241,10 @@ export default function SettingsPanel({
                 <Download className="w-6 h-6" />
               </div>
               <h4 className="text-sm font-bold text-neutral-100 font-sans tracking-tight mb-2">
-                NOVA-X v1.7.0 Available
+                IRIS-AI v1.7.0 Available
               </h4>
               <p className="text-[10px] text-neutral-400 max-w-sm leading-relaxed mb-6">
-                An automated critical system package has been compiled on mdfarhangamer001/react-example release nodes. All settings, database memory layers, and active provider api keys will be preserved.
+                An automated critical system package has been compiled on IRISX-AI/IRIS-AI release nodes. All settings, database memory layers, and active provider api keys will be preserved.
               </p>
               <div className="flex gap-3 w-full max-w-xs">
                 <button

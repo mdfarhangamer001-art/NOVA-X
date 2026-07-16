@@ -17,8 +17,8 @@ export default function LoginGateway({
   onMergeChoice,
 }: LoginGatewayProps) {
   const [authMode, setAuthMode] = useState<'options' | 'local_form' | 'local_loading' | 'merge_prompt'>('options');
-  const [localName, setLocalName] = useState('Farhan Gamer');
-  const [localEmail, setLocalEmail] = useState('farhan.offline@novax.ai');
+  const [localName, setLocalName] = useState('Tehzeeb');
+  const [localEmail, setLocalEmail] = useState('mdfarhangamer001@gmail.com');
   const [creationLogs, setCreationLogs] = useState<string[]>([]);
   const [creationProgress, setCreationProgress] = useState(0);
 
@@ -28,7 +28,7 @@ export default function LoginGateway({
       setAuthMode('merge_prompt');
     } else {
       onLoginGoogle({
-        name: 'Farhan Gamer',
+        name: 'Tehzeeb',
         email: 'mdfarhangamer001@gmail.com',
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
       });
@@ -41,7 +41,7 @@ export default function LoginGateway({
     setCreationProgress(5);
     
     const formattedName = localName.replace(/\s+/g, '_');
-    const userPath = `C:\\Users\\${formattedName}\\AppData\\Local\\NOVA-X`;
+    const userPath = `C:\\Users\\${formattedName}\\AppData\\Local\\IRIS-AI`;
 
     const logSteps = [
       { text: `CMD: mkdir -p "${userPath}"`, p: 20, delay: 250 },
@@ -162,7 +162,7 @@ export default function LoginGateway({
                   value={localName}
                   onChange={(e) => setLocalName(e.target.value)}
                   className="w-full bg-[#050505] border border-neutral-900 rounded-lg px-3 py-2 text-xs focus:border-emerald-500/20 outline-none text-neutral-200 font-mono"
-                  placeholder="Farhan Gamer"
+                  placeholder="Tehzeeb"
                 />
               </div>
 
@@ -173,7 +173,7 @@ export default function LoginGateway({
                   value={localEmail}
                   onChange={(e) => setLocalEmail(e.target.value)}
                   className="w-full bg-[#050505] border border-neutral-900 rounded-lg px-3 py-2 text-xs focus:border-emerald-500/20 outline-none text-neutral-200 font-mono"
-                  placeholder="farhan@novax-local.internal"
+                  placeholder="mdfarhangamer001@gmail.com"
                 />
               </div>
 
@@ -181,7 +181,7 @@ export default function LoginGateway({
                 <label className="text-[9px] uppercase font-bold tracking-wider text-neutral-500 font-mono">Simulated Install Path</label>
                 <div className="w-full bg-[#050505] border border-neutral-900 rounded-lg px-3 py-2 text-[10px] font-mono text-neutral-600 flex items-center gap-2 select-none truncate">
                   <Folder className="w-3.5 h-3.5 flex-shrink-0 text-emerald-500/30" />
-                  C:\Users\{localName.replace(/\s+/g, '_')}\AppData\Local\NOVA-X
+                  C:\Users\{localName.replace(/\s+/g, '_')}\AppData\Local\IRIS-AI
                 </div>
               </div>
 
@@ -244,7 +244,7 @@ export default function LoginGateway({
               <div className="bg-[#050505] border border-neutral-900 p-3.5 rounded-xl flex flex-col gap-2 text-[10px] text-neutral-400">
                 <div className="flex justify-between">
                   <span className="text-neutral-600">Local Cache:</span>
-                  <span className="text-emerald-400 truncate max-w-[180px]">%LOCALAPPDATA%\Local\NOVA-X</span>
+                  <span className="text-emerald-400 truncate max-w-[180px]">%LOCALAPPDATA%\Local\IRIS-AI</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-neutral-600">Sync Pipeline:</span>
@@ -262,7 +262,7 @@ export default function LoginGateway({
                   onClick={() => {
                     onMergeChoice(true);
                     onLoginGoogle({
-                      name: 'Farhan Gamer',
+                      name: 'Tehzeeb',
                       email: 'mdfarhangamer001@gmail.com',
                       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
                     });
@@ -276,7 +276,7 @@ export default function LoginGateway({
                   onClick={() => {
                     onMergeChoice(false);
                     onLoginGoogle({
-                      name: 'Farhan Gamer',
+                      name: 'Tehzeeb',
                       email: 'mdfarhangamer001@gmail.com',
                       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
                     });
